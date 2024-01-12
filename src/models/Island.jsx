@@ -45,19 +45,19 @@ export function Island({
     if (isRotating) {
       const clientX = e.touches ? e.touches[0].clientX : e.clientX
       const delta = (clientX - lastX.current) / viewport.width
-      islandRef.current.rotation.y += delta * 0.001 * Math.PI
-      lastX.current = rotationSpeed.current = delta * 0.001 * Math.PI
+      islandRef.current.rotation.y += delta * 0.0004 * Math.PI
+      lastX.current = rotationSpeed.current = delta * 0.0004 * Math.PI
     }
   }
   const handleKeyDown = (e) => {
     if (e.key === 'ArrowLeft') {
         if(!isRotating) setIsRotating(true)
         islandRef.current.rotation.y += 0.005 * Math.PI
-        rotationSpeed.current = 0.007
+        rotationSpeed.current = 0.008
     } else if (e.key === 'ArrowRight') {
         if(!isRotating) setIsRotating(true)
         islandRef.current.rotation.y -= 0.005 * Math.PI
-        rotationSpeed.current = -0.007
+        rotationSpeed.current = -0.008
     }
   }
   const handleKeyUp = (e) => {
