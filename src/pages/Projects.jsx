@@ -1,6 +1,6 @@
 import { projects } from '../constants'
 import { Link } from 'react-router-dom'
-
+import CTA from '../components/CTA'
 const Projects = () => {
   return (
     <section className="max-container">
@@ -25,11 +25,13 @@ const Projects = () => {
               </div>
             </div>
             <div className="mt-5 flex flex-col">
-              <h4>
+              <h4 className="text-2xl font-poppins font-semibold">
                 {project.name}
               </h4>
-              <p>{project.description}</p>
-              <div>
+              <p className="mt-2 text-slate-500">
+                {project.description}
+              </p>
+              <div className='mt-5 flex items-center gap-2 font-poppins'>
                 <Link 
                   to={project.link} 
                   target="_blank" 
@@ -43,6 +45,8 @@ const Projects = () => {
           </div>
         ))}
       </div>
+      <hr />
+      <CTA />
     </section>
   )
 }
